@@ -4,7 +4,7 @@ To test this just clone the repo and run `composer install`
 
 All the required dependencies will be installed. Once all things are installed.
 
-Head to bootstrap.php file and your database information in the following code:
+Head to **bootstrap.php** file and your database information in the following code:
 
 ```
 <?php
