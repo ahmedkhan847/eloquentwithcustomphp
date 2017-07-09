@@ -60,34 +60,34 @@ $tableNames = [
     
 ];
 
-// Capsule::schema()->create($tableNames['roles'], function ($table) {
-//     $table->increments('id');
-//     $table->string('name')->unique();
-//     $table->timestamps();
-// });
+Capsule::schema()->create($tableNames['roles'], function ($table) {
+    $table->increments('id');
+    $table->string('name')->unique();
+    $table->timestamps();
+});
 
-// Capsule::schema()->create($tableNames['permissions'], function ($table) {
-//     $table->increments('id');
-//     $table->string('name')->unique();
-//     $table->timestamps();
-// });
+Capsule::schema()->create($tableNames['permissions'], function ($table) {
+    $table->increments('id');
+    $table->string('name')->unique();
+    $table->timestamps();
+});
 
-// Capsule::schema()->create($tableNames['user_has_roles'], function ($table) use ($tableNames) {
-//     $table->integer('role_id')->unsigned();
-//     $table->integer($tableNames['users'])->unsigned();
+Capsule::schema()->create($tableNames['user_has_roles'], function ($table) use ($tableNames) {
+    $table->integer('role_id')->unsigned();
+    $table->integer($tableNames['users'])->unsigned();
 
-//     $table->foreign('role_id')
-//         ->references('id')
-//         ->on($tableNames['roles'])
-//         ->onDelete('cascade');
+    $table->foreign('role_id')
+        ->references('id')
+        ->on($tableNames['roles'])
+        ->onDelete('cascade');
 
-//     $table->foreign($tableNames['users'])
-//         ->references('id')
-//         ->on($tableNames['users'])
-//         ->onDelete('cascade');
+    $table->foreign($tableNames['users'])
+        ->references('id')
+        ->on($tableNames['users'])
+        ->onDelete('cascade');
 
-//     $table->primary(['role_id', $tableNames['users']]);
-// });
+    $table->primary(['role_id', $tableNames['users']]);
+});
 
 Capsule::schema()->create($tableNames['role_has_permissions'], function ($table) use ($tableNames) {
     $table->integer('permission_id')->unsigned();

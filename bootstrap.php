@@ -8,7 +8,7 @@ $capsule = new Capsule;
 $capsule->addConnection([
     "driver" => "mysql",
     "host" =>"127.0.0.1",
-    "database" => "sms",
+    "database" => "acl",
     "username" => "root",
     "password" => ""
 ]);

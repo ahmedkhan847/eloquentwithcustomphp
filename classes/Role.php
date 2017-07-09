@@ -1,6 +1,4 @@
 <?php
-// include "HasPermissions.php"; 
-
 use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model

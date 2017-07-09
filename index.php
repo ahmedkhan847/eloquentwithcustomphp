@@ -1,15 +1,15 @@
 <?php
 require "bootstrap.php";
 
-$role = Role::Create([
-    "name" => "admnin"
-]);
-
 $user = User::Create([
     'name' => "Ahmed Khan",
-    'email' => "ahmed.khan@lbs.com",
+    'email' => "ahmed.khan@cloudways.com",
     'password' => password_hash("ahmedkhan",PASSWORD_BCRYPT),
 ]);
 
-dd($user->assignRole($role));
+print_r($user->todo()->create([
+    'todo' => "Working with Eloquent Without PHP",
+    'category' => "eloquent",
+    'description' => "Testing the work using eloquent without laravel"
+    ]));
 
